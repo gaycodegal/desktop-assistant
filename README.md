@@ -9,12 +9,16 @@ setting timers etc while doing laundry.
 
 ## Current idiosyncrasies
 
-Expects /HOME/Documents/git/Alarms to contain https://github.com/gaycodegal/LinuxAlarm
+- Expects /HOME/Documents/git/Alarms to contain https://github.com/gaycodegal/LinuxAlarm
+- Expects linux
+- Expects music to be handled by a "quod libet" instance
+- Only music and timer and license commands really work
+- Speech handled by speech-dispatcher
+  - I personally recommend using the RHVoice snap with
+  the "SLT" voice, but it's up to you to figure out how
+  to install that and make it work with speech-dispatcher
+  (the config should be in `~/.config/speech-dispatcher/`)
 
-Expects linux
-
-Expects music to be handled by a "quod libet" instance
-Only music and timer and license commands really work
 
 ## Pip requirements for venv
 
