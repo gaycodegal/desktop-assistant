@@ -14,7 +14,7 @@ def next_song():
     subprocess.run(["bash", env.get_hobby_command("next.sh")])
 
 def stop():
-    subprocess.run(["bash", env.get_hobby_command("previous.sh")])
+    subprocess.run(["bash", env.get_hobby_command("stop.sh")])
 
 
 def main(intents):
