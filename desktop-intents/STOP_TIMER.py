@@ -1,3 +1,4 @@
 import subprocess
+import env
 
-subprocess.run(["pkill", "hobby_vli_timer"])
+subprocess.run([env.get_hobby_command("stop_timer.sh")])
