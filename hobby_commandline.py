@@ -48,9 +48,9 @@ def main(voice_command):
     voice_command = voice_command.strip()
     if len(voice_command) == 0:
         return
-    #cmd = voice_command.split(" ")[0]
-    #if not os.path.exists(os.path.join('lua/actions', cmd + ".lua")):
-    #    say([f"{cmd} not found"])
+    cmd = voice_command.split(" ")[0]
+    if not os.path.exists(os.path.join('lua/actions', cmd + ".lua")):
+        return print(f"Command '{cmd}' not found")
     
     with subprocess.Popen(["lua", "lua/desktop-actions/intent-runner.lua", voice_command], stdout=subprocess.PIPE) as proc:
         while line := proc.stdout.readline().decode():

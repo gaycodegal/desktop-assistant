@@ -7,6 +7,9 @@ import env
 def play():
     subprocess.run(["bash", env.get_hobby_command("play.sh")])
 
+def pause():
+    subprocess.run(["bash", env.get_hobby_command("pause.sh")])
+
 def previous_song():
     subprocess.run(["bash", env.get_hobby_command("previous.sh")])
 
@@ -22,6 +25,8 @@ def main(intents):
 
     if button == 4:
         return play()
+    elif button == 2:
+        return pause()
     elif button == 16:
         return previous_song()
     elif button == 32:
