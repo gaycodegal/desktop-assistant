@@ -16,6 +16,10 @@ Expects linux
 Expects music to be handled by a "quod libet" instance
 Only music and timer and license commands really work
 
+## Pip requirements for venv
+
+See [pip3-list.txt](./pip3-list.txt)
+
 ## Origin
 
 This work is a derivative of another project I published at:
