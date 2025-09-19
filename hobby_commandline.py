@@ -2,6 +2,7 @@ import argparse
 import subprocess
 import json
 import sys
+import os
 
 import start_activity
 
@@ -30,6 +31,9 @@ def stopMusic(args):
         },
     }])
 
+def forceQuit(args):
+    sys.exit()
+
 command_map = {
     "quit": command_quit,
     "say": say,
@@ -37,11 +41,17 @@ command_map = {
     "startActivity": start_activity.dispatch,
     "sendMediaButtonAction": sendMediaButtonAction,
     "stopMusic": stopMusic,
+    "forceQuit": forceQuit,
 }
 
 def main(voice_command):
-    if len(voice_command.strip()) == 0:
+    voice_command = voice_command.strip()
+    if len(voice_command) == 0:
         return
+    #cmd = voice_command.split(" ")[0]
+    #if not os.path.exists(os.path.join('lua/actions', cmd + ".lua")):
+    #    say([f"{cmd} not found"])
+    
     with subprocess.Popen(["lua", "lua/desktop-actions/intent-runner.lua", voice_command], stdout=subprocess.PIPE) as proc:
         while line := proc.stdout.readline().decode():
             response = json.loads(line)

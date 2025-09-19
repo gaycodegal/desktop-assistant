@@ -2,6 +2,7 @@ import json
 import sys
 import time
 import subprocess
+import env
 
 def main(intents):
     alarm_length_seconds = intents["intExtras"]["android.intent.extra.alarm.LENGTH"]
@@ -9,7 +10,7 @@ def main(intents):
     #spare_seconds = alarm_length_seconds % 60
     #time.sleep(spare_seconds)
     subprocess.run([
-        '/HOME/Documents/git/Alarms/alarm_slint/run_alarm_ui.sh',
+        env.get_hobby_command('hobby_vli_timer.sh'),
         '--alarm', str(alarm_length_seconds),
         '--alarm-sound', '/HOME/Music/alarm.mp3',
         '--no-escape-quits'])

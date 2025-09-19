@@ -2,19 +2,19 @@ import json
 import sys
 import time
 import subprocess
+import env
 
 def play():
-    subprocess.run("flatpak run io.github.quodlibet.QuodLibet --play-pause".split(" "))
+    subprocess.run(["bash", env.get_hobby_command("play.sh")])
 
 def previous_song():
-    subprocess.run("flatpak run io.github.quodlibet.QuodLibet --force-previous".split(" "))
+    subprocess.run(["bash", env.get_hobby_command("previous.sh")])
 
 def next_song():
-    subprocess.run("flatpak run io.github.quodlibet.QuodLibet --next".split(" "))
+    subprocess.run(["bash", env.get_hobby_command("next.sh")])
 
 def stop():
-    subprocess.run("flatpak run io.github.quodlibet.QuodLibet --stop".split(" "))
-
+    subprocess.run(["bash", env.get_hobby_command("previous.sh")])
 
 
 def main(intents):

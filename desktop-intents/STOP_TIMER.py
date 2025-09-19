@@ -1,3 +1,3 @@
 import subprocess
 
-subprocess.run(["pkill", "run_alarm_ui.sh"])
+subprocess.run(["pkill", "hobby_vli_timer"])
