@@ -6,10 +6,18 @@ import os
 
 import start_activity
 
+def get_env_or(value, default):
+    try:
+        return os.environ[value]
+    except KeyError:
+        return default
+
+HOBBY_CMD_SAY = get_env_or("HOBBY_CMD_SAY", "spd-say").split(" ")
+
 def say(args):
     text = " ".join(args)
     print(text)
-    subprocess.run(['spd-say', '--wait', text], shell=False, check=True)
+    subprocess.run(HOBBY_CMD_SAY + ['--wait', text], shell=False, check=True)
 
 def command_quit(args):
     pass
