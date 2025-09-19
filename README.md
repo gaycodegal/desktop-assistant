@@ -10,7 +10,9 @@ setting timers etc while doing laundry.
 ## Current idiosyncrasies
 
 Expects /HOME/Documents/git/Alarms to contain https://github.com/gaycodegal/LinuxAlarm
+
 Expects linux
+
 Expects music to be handled by a "quod libet" instance
 Only music and timer and license commands really work
 
