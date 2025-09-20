@@ -13,6 +13,7 @@ def main(intents):
         env.get_hobby_command('hobby_vli_timer.sh'),
         '--alarm', str(alarm_length_seconds),
         '--alarm-sound', '/HOME/Music/alarm.mp3',
+        '--command', env.get_hobby_command('pause_music_during_timer.sh'),
         '--no-escape-quits'])
     
     

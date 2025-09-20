@@ -52,6 +52,7 @@ command_map = {
     "forceQuit": forceQuit,
 }
 
+
 def main(voice_command):
     voice_command = voice_command.strip()
     if len(voice_command) == 0:
