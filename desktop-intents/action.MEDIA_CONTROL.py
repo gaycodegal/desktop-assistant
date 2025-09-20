@@ -19,6 +19,11 @@ def next_song():
 def stop():
     subprocess.run(["bash", env.get_hobby_command("stop.sh")])
 
+def skip_forward():
+    subprocess.run(["bash", env.get_hobby_command("skip_to.sh"), "30+"])
+
+def skip_backward():
+    subprocess.run(["bash", env.get_hobby_command("skip_to.sh"), "30-"])
 
 def main(intents):
     button = intents.get("intExtras", {}).get("button", None)
@@ -31,6 +36,10 @@ def main(intents):
         return previous_song()
     elif button == 32:
         return next_song()
+    elif button == 64:
+        return skip_forward()
+    elif button == 8:
+        return skip_backward()
     print("unknown button: ", button)
 
     string_command = intents.get("stringExtras", {}).get("button", None)
